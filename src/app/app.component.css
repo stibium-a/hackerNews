@@ -1,0 +1,21 @@
+ /* toolbar:  */
+ .toolbar{
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+ }
+
+ .toolbar-menu-title-general-span{
+  display: flex;
+  align-items: center;
+ }
+
+ /* search input on toolbar: */
+
+.search-form-field {
+  padding-top: 18px;
+  width: 250px;
+}
+
+

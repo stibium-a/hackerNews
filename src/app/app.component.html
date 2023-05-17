@@ -1,0 +1,19 @@
+<p>
+  <mat-toolbar class="toolbar">
+   <span class="toolbar-menu-title-general-span">
+      <span class="toolbar-title-span">Hacker News</span>
+   </span>
+  
+    <mat-form-field class="search-form-field">
+      
+      <input matInput type="text" [(ngModel)]="searchInputValue" (input)="setSearchNewsValue()" placeholder="search">
+      <button *ngIf="searchInputValue" matSuffix mat-icon-button aria-label="Clear" (click)="searchInputValue=''; setSearchNewsValue()" >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  
+    <button mat-raised-button routerLink="" (click)="refreshNewsList()" [disabled]="endOfReseiving">Refresh News</button>
+  </mat-toolbar>
+</p>
+
+<router-outlet></router-outlet>

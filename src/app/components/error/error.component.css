@@ -1,0 +1,9 @@
+h1{
+  margin-top: 75px;
+  text-align: center;
+}
+
+.picture-holder{
+  width: fit-content;
+  margin: 0 auto;
+}

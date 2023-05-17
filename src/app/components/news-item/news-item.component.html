@@ -1,0 +1,83 @@
+<div class="wrapper">
+
+  <mat-card class="mat-card-general-info">
+    <mat-card-header>
+      <mat-card-title>
+        <p class="mat-card-news-link-holder">
+          <span>Read news: </span>
+          <a href="{{ newsElement.url ||'' }}" 
+            target="_blank" rel="noopener noreferrer"  class="mat-card-news-link">
+            {{ newsElement.url || ''}}
+          </a>
+        </p>
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-content>
+      <h3 class="mat-card-news-title">{{newsElement.title }}</h3>
+
+      <div class="wrapper__in__content">
+        <div class="mat-card-news-content-block">
+          <p class="mat-card-content-item mat-card-news-date">
+            <span class="mat-card-news-date-span">
+              Date:
+            </span> {{ newsElement.time * 1000 | date }}
+          </p>
+          <p class="mat-card-content-item mat-card-news-author">Author: {{ newsElement.by }}</p>
+          <p class="mat-card-content-item mat-card-news-comments-Count">
+            Comments: {{ commentsCount }}</p>
+
+        </div>
+        <div class="buttonBlock">
+          <button mat-raised-button matTooltip="Back to the news tape" matTooltipPosition="right" routerLink="">
+            <mat-icon color="white">
+              arrow_back
+            </mat-icon>
+            Back
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div class="wrapper-comment">
+
+  <ng-container *ngIf="isCommentsPresent">
+
+    <div *ngFor="let comment of arrayOfComments" #commentContainer>
+      <mat-card class="mat-card-comments-block">
+        <mat-card-content>
+
+          <p class="comment-author" *ngIf="!comment.deleted">{{ comment.by }}: </p>
+          <p class="comment-text" *ngIf="!comment.deleted">{{ comment.text }}</p>
+          <p class="comment-deleted" *ngIf="comment.deleted">Comment was deleted!</p>
+        </mat-card-content>
+
+        <mat-card-actions [ngClass]="comment.kids ? 'showBlock' : 'hideBlock' ">
+          <mat-divider></mat-divider>
+          <button mat-raised-button (click)="showAnswers(comment, commentContainer)" 
+            id="{{comment.id}}" class="toggleAnswersButton" #btn>{{ btntitle }}
+          </button>
+
+        </mat-card-actions>
+      </mat-card>
+
+      <div #sub id="{{(+comment.id / 10).toString()}}" class="subCom hide">
+
+        <mat-card class="mat-card-sub-comments-block" 
+          *ngFor="let subComment of chooseArrayOfSubcomments(comment)">
+
+          <mat-card-content>
+            <p class="comment-author" *ngIf="!subComment.deleted">{{ subComment.by }}: </p>
+
+            <p class="comment-text" *ngIf="!subComment.deleted">{{ subComment.text }}</p>
+            <p class="comment-deleted" *ngIf="subComment.deleted">Comment was deleted.</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </ng-container>
+</div>

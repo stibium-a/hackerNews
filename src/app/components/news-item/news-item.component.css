@@ -1,0 +1,108 @@
+.container{
+  /* overflow-y: auto; */
+
+}
+
+.wrapper{
+  width: 85%;
+  margin: 70px auto 0 auto;
+}
+
+.wrapper-comment{ 
+  width: 85%;
+  margin: auto;
+}
+
+.mat-card-general-info{
+  
+  color: #fff;
+  margin: 0 10px;
+}
+
+/* .mat-card-news-link-holder {} */
+.mat-card-news-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.mat-card-news-link:hover{
+  text-decoration: underline;
+}
+
+.mat-card-news-link-holder span{
+  font-size: 24px;
+  text-decoration: underline;
+}
+
+.mat-card-news-title {
+  text-align: center;
+  font-size: x-large;
+}
+
+.wrapper__in__content{
+  display: flex;
+  justify-content: space-between;
+}
+
+.mat-card-content-item{
+  font-size: 16px;
+}
+/* .mat-card-news-date {
+  
+} */
+
+.mat-card-news-date-span{
+  font-weight: bold;
+}
+/* .mat-card-news-author {
+}
+.mat-card-news-comments-count {
+  
+} */
+
+mat-divider{
+  margin-bottom: 5px;
+}
+
+.buttonBlock{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.mat-card-comments-block {
+  margin:10px 10px 10px 50px;
+  padding: 5px;
+  color: #fff;
+}
+.comment-author {
+  font-weight: bold;
+  padding: 0 0 0 40px;
+}
+
+.mat-card-sub-comments-block{
+  margin:10px 10px 10px 100px;
+  padding: 5px 15px 0 15px;
+  color: #fff;
+}
+
+.toggleAnswersButton{
+  background-color: dimgrey;
+  transition: all 0.6s ease;
+}
+
+.toggleAnswersButton:hover{
+  background-color: lightslategrey;
+  transition: all 0.6s ease;
+}
+.showBlock{
+  display: block;
+}
+
+.hideBlock{
+  display: none;
+}
+
+.hide{
+  display: none;
+}

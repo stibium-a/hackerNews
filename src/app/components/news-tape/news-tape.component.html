@@ -1,0 +1,38 @@
+<div class="container">
+  <mat-card *ngFor="let newsItem of newsArrayOfNewsTapeComp">
+  
+    <div class="wrapper">
+
+      <div *ngIf="newsItem.kids" 
+        matBadge="{{newsItem.kids.length}}" 
+        matBadgeSize="medium"
+        matBadgeOverlap="false" 
+        class="demo-section">
+      </div>
+
+      <mat-card-header>
+        <mat-card-title>
+          <button mat-raised-button class="buttonWithTitle"
+            routerLink="/itemNews/{{newsItem.id}}">
+                {{ newsItem.title }}
+          </button>
+        </mat-card-title>  
+      </mat-card-header>
+      <mat-card-content>
+        <div class="card-content-author-and-rating">
+          <p class="card-content-author-and-rating-item card-content-author">
+            Author: {{newsItem.by }}
+          </p>
+          <p class="card-content-author-and-rating-item card-content-rating">
+            Rating: {{newsItem.score }}
+          </p>
+        </div>
+        <div class="card-content-date">
+          <p class="card-content-date-item card-content-date">
+            {{newsItem.time * 1000 | date }}
+          </p>
+        </div>
+      </mat-card-content>
+    </div>    
+  </mat-card>
+</div>
